@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CallCenterApp::Application.config.secret_key_base = 'b2415241e05cb982fb14297809aeab844646017493bcb9e470672842b7fd9e4d8c0daf61ea9906898fa0ac757d0fdd28edc9337487c1d48b084ebcb77908453a'
+CallCenterApp::Application.config.secret_key_base = '1692afea3720bd59ee1b347e33892897f5bb255b93203f635fb8b2f3c2b91446a494a5ed6c06493ae30d5a9847752bb2dd24b46107ca8ee9bc01aca4c386df86'
