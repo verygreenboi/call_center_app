@@ -12,3 +12,5 @@ GMAIL_USERNAME: Your_Username
 GMAIL_PASSWORD: Your_Password
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
+MANDRILL_USERNAME: Your_Username
+MANDRILL_APIKEY: Your_API_Key
