@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224135459) do
+ActiveRecord::Schema.define(version: 20140224211145) do
+
+  create_table "accounts", force: true do |t|
+    t.string   "name"
+    t.string   "account_number"
+    t.string   "pin"
+    t.string   "verify"
+    t.integer  "balance"
+    t.string   "currency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "bank_id"
+  end
+
+  add_index "accounts", ["bank_id"], name: "index_accounts_on_bank_id", using: :btree
+
+  create_table "banks", force: true do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "banks", ["user_id"], name: "index_banks_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  account_number :string(255)
+#  pin            :string(255)
+#  verify         :string(255)
+#  balance        :integer
+#  currency       :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  bank_id        :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

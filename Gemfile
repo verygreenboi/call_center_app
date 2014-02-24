@@ -26,6 +26,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 group :production do
   gem 'unicorn'
