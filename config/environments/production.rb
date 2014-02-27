@@ -76,7 +76,7 @@ CallCenterApp::Application.configure do
       :address   => "smtp.mailgun.org",
       :port      => 587,
       :user_name => ENV["MAILGUN_SMTP_LOGIN"],
-      :password  => ENV["MAILGUN_PASSWORD"]
+      :password  => ENV["MAILGUN_SMTP_PASSWORD"]
     }
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'callerzng.tk' }
