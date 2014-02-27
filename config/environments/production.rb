@@ -75,7 +75,7 @@ CallCenterApp::Application.configure do
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mailgun.org",
       :port      => 587,
-      :user_name => ENV["MAILGUN_USERNAME"],
+      :user_name => ENV["MAILGUN_SMTP_LOGIN"],
       :password  => ENV["MAILGUN_PASSWORD"]
     }
   # ActionMailer Config
