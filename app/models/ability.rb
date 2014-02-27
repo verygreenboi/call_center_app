@@ -6,10 +6,9 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     else
-      can :read, :all
-      can :create, Account
-      can :update, Account
-      can :destroy, Account
+      can :read, Bank
+      can :update, Bank
+      can :manage, Account
     end
 
     # Define abilities for the passed in user here. For example:
