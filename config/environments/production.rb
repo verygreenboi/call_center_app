@@ -73,13 +73,13 @@ CallCenterApp::Application.configure do
   config.active_support.deprecation = :notify  
 
     config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
+      :address   => "smtp.mailgun.org",
       :port      => 587,
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_APIKEY"]
+      :user_name => ENV["MAILGUN_USERNAME"],
+      :password  => ENV["MAILGUN_PASSWORD"]
     }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'callerzng.tk' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
