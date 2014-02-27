@@ -15,4 +15,5 @@
 #
 
 class Account < ActiveRecord::Base
+	resourcify
 end

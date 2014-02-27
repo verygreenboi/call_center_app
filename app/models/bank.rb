@@ -11,4 +11,5 @@
 #
 
 class Bank < ActiveRecord::Base
+	resourcify
 end
