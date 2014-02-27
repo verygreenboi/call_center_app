@@ -1,4 +1,6 @@
 CallCenterApp::Application.routes.draw do
+  resources :calls
+
   match 'dashboard/users', to: 'users#index', via: :get
   match 'dashboard/banks', to: 'banks#index', via: :get
   match 'dashboard/accounts', to: 'accounts#index', via: :get

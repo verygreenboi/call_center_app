@@ -8,8 +8,10 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #  user_id      :integer
+#  greeting     :text
 #
 
 class Bank < ActiveRecord::Base
 	resourcify
+	belongs_to :user
 end

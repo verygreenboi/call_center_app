@@ -1,13 +1,15 @@
 # == Schema Information
 #
-# Table name: roles
+# Table name: calls
 #
-#  id            :integer          not null, primary key
-#  name          :string(255)
-#  resource_id   :integer
-#  resource_type :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id         :integer          not null, primary key
+#  from       :string(255)
+#  to         :string(255)
+#  type       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  bank_id    :integer
+#  account_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

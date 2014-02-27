@@ -11,6 +11,13 @@ class BanksController < ApplicationController
 		
 	end
 	def create
+		@u = User.find(params[:user_id])
+		@bank = @u.banks.build(bank_params)
+
+		if @bank.save
+			flash[:success] = "Bank created!"
+			redirect_to root_path
+		end
 		
 	end
 	def edit
@@ -22,4 +29,9 @@ class BanksController < ApplicationController
 	def destroy
 		
 	end
+
+	private
+		def bank_params
+			params.require(:bank).permit!
+		end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227131636) do
+ActiveRecord::Schema.define(version: 20140227171533) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
@@ -33,9 +33,23 @@ ActiveRecord::Schema.define(version: 20140227131636) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.text     "greeting"
   end
 
   add_index "banks", ["user_id"], name: "index_banks_on_user_id", using: :btree
+
+  create_table "calls", force: true do |t|
+    t.string   "from"
+    t.string   "to"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "bank_id"
+    t.integer  "account_id"
+  end
+
+  add_index "calls", ["account_id"], name: "index_calls_on_account_id", using: :btree
+  add_index "calls", ["bank_id"], name: "index_calls_on_bank_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"

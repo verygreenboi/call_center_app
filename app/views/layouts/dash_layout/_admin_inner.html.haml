@@ -1,0 +1,16 @@
+-# users
+.col-md-6.widget
+	%h2 Users
+	= render "layouts/list_users"
+	= link_to "New User", new_user_path, :class => "btn btn-primary btn-sm"
+-# Banks
+.col-md-6.widget
+	%h2 Banks
+	= link_to "New Bank", new_bank_path, :class => "btn btn-primary btn-sm"
+-# Accounts
+.col-md-6.widget
+	%h2 Accounts
+	= link_to "New Account", new_account_path, :class => "btn btn-primary btn-sm"
+.col-md-6.widget
+	%h2 Calls
+	= link_to "View All Calls", :class => "+447857738833"

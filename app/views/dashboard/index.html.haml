@@ -1,2 +1,21 @@
-%h1 Dashboard#index
-%p Find me in app/views/dashboard/index.html.haml
+%div{:class => "#{@role} #{action_name} row"}
+	.container
+		%h1.col-md-12.title Dashboard
+		#main.col-md-9
+			- if current_user.has_role? :admin
+				= render "layouts/dash_layout/admin_inner"
+			- else
+				= render "layouts/dash_layout/user_inner"
+
+		%aside.col-md-3
+			%h3 Menu
+			%ul
+				- unless current_user.has_role? :admin
+					
+				- else
+					%li 
+						= link_to "Users", users_path
+					%li 
+						= link_to "Accounts", accounts_path
+					%li 
+						= link_to "Banks", banks_path

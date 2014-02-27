@@ -1,0 +1,12 @@
+%div{:class => "#{@role} #{action_name} row"}
+	.container
+		%h1.col-md-12.title New Bank
+		#main.col-md-9
+			.authform
+				= simple_form_for @bank do |f|
+					= f.input :name
+					= f.hint 'No special characters, please!'
+					= f.input :phone_number
+					= f.input :greeting, label: 'Initial Greeting Message'
+					= f.association :user, label_method: :email, include_blank: false
+					= f.button :submit, class: 'button right'
