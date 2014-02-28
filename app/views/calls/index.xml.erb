@@ -3,8 +3,8 @@
 </Say>
 <Gather numDigits="1" action="<%= calls_url %>.xml?step=routing" method="GET">
 	<Say voice="woman">
-		<% if params[:Called] %>
-			<%= params[:Called] %>
+		<% unless @bank.nil? %>
+			<%= @bank.greeting %>
 		<% end %>
 	</Say>
 </Gather>

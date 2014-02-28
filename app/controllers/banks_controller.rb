@@ -1,6 +1,6 @@
 class BanksController < ApplicationController
 	before_filter :authenticate_user!
-	load_and_authorize_resource
+	load_and_authorize_resource :only => [:index, :show, :new]
 	def index
 		
 	end
@@ -11,11 +11,15 @@ class BanksController < ApplicationController
 		
 	end
 	def create
-		@u = User.find(params[:user_id])
+		@u = User.find_by_id(params[:bank][:user_id])
+
 		@bank = @u.banks.build(bank_params)
 
 		if @bank.save
-			flash[:success] = "Bank created!"
+			flash[:notice] = "Bank created!"
+			redirect_to root_path
+		else
+			flash[:alert] = "Error occurred!"
 			redirect_to root_path
 		end
 		
