@@ -28,7 +28,7 @@ class BanksController < ApplicationController
 		
 	end
 	def update
-		@bank = Bank.update(bank_params)
+		@bank = Bank.update_attributes(bank_params)
 	end
 	def destroy
 		
