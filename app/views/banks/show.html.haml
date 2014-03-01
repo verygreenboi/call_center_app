@@ -1,0 +1,16 @@
+%div{:class => "#{@role} #{action_name} row"}
+	.container
+		%h1.col-md-12.title Administer Bank
+		#main.col-md-9
+			.authform
+				= simple_form_for @bank do |f|
+					= f.hidden_field :id
+					= f.hidden_field :user_id
+					= f.input :name
+					= f.hint 'No special characters, please!'
+					- unless current_user.has_role? :admin
+						= f.input :phone_number, :disabled =>true
+					- else
+						= f.input :phone_number
+					= f.input :greeting, label: 'Initial Greeting Message'
+					= f.button :submit, class: 'button right'

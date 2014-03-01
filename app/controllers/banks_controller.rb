@@ -5,7 +5,7 @@ class BanksController < ApplicationController
 		
 	end
 	def show
-		
+		@bank = Bank.find(params[:id])
 	end
 	def new
 		
@@ -28,7 +28,7 @@ class BanksController < ApplicationController
 		
 	end
 	def update
-		
+		@bank = Bank.update(bank_params)
 	end
 	def destroy
 		

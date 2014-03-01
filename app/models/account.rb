@@ -16,4 +16,5 @@
 
 class Account < ActiveRecord::Base
 	resourcify
+	belongs_to :bank
 end

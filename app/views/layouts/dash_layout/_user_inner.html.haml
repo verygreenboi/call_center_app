@@ -1,0 +1,15 @@
+-# users
+.col-md-6.widget
+	%h2 Banks
+	- current_user.banks.each do |b|
+		%ul
+			%li
+				= link_to b.name, bank_path(b.id)
+-# Accounts
+
+.col-md-6.widget
+	%h2 Accounts
+	- current_user.banks.each do |ba|
+		%ul
+			- ba.accounts.each do |a|
+				%li a.name

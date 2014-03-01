@@ -14,4 +14,5 @@
 class Bank < ActiveRecord::Base
 	resourcify
 	belongs_to :user
+	has_many :accounts
 end
