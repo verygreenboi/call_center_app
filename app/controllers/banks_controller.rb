@@ -20,7 +20,7 @@ class BanksController < ApplicationController
 			redirect_to root_path
 		else
 			flash[:alert] = "Error occurred!"
-			redirect_to root_path
+			render 'new'
 		end
 		
 	end
@@ -38,7 +38,9 @@ class BanksController < ApplicationController
 		end
 	end
 	def destroy
-		
+		Bank.find(params[:id]).destroy
+    flash[:notice] = "Bank deleted."
+    redirect_to root_url
 	end
 
 	private

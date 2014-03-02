@@ -13,6 +13,10 @@
 
 class Bank < ActiveRecord::Base
 	resourcify
+	validates :phone_number, presence: true,
+                    uniqueness: true
+  validates :greeting, presence: true
+  validates :name, presence: true
 	belongs_to :user
 	has_many :accounts
 end

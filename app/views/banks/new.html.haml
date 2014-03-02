@@ -4,6 +4,18 @@
 		#main.col-md-9
 			.authform
 				= simple_form_for @bank do |f|
+					.error_messages
+						- if @bank.errors.any?
+							#error_explanation
+								.alert.alert-error
+									- message = "The form contains "
+									- message << pluralize(@bank.errors.count, "error")
+									- message << "."
+									= message 
+									%ul
+										- @bank.errors.full_messages.each do |msg|
+											%li 
+												= msg
 					= f.input :name
 					= f.hint 'No special characters, please!'
 					= f.input :phone_number
