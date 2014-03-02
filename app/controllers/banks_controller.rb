@@ -28,7 +28,14 @@ class BanksController < ApplicationController
 		
 	end
 	def update
-		@bank = Bank.update_attributes(bank_params)
+		@bank = Bank.find(params[:id])
+		if @bank.update_attributes(bank_params)
+			# Handle Update
+			flash[:notice] = "Bank updated"
+			redirect_to @bank
+		else
+			render 'edit'
+		end
 	end
 	def destroy
 		
