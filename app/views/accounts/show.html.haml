@@ -1,0 +1,32 @@
+%div{:class => "#{@role} #{action_name} row"}
+	.container
+		%h1.col-md-12.title 
+			= @account.name
+		#main.col-md-9
+			.account_details.row
+				.container
+					%h2 Account Details
+					.col-md-6
+						%p.acc_detail
+							Account Name : 
+							= @account.name
+						%p.acc_detail
+							Account Number : 
+							= @account.account_number
+						%p.acc_detail
+							Bank : 
+							= @account.bank.name
+						%p.acc_detail
+							Balance : 
+							= @account.balance
+						%p.acc_detail
+							Currency : 
+							= @account.currency
+						%p.acc_detail
+							Pin : 
+							= @account.pin
+						%p.acc_detail
+							Verify : 
+							= @account.verify
+						= link_to "Edit Account", edit_account_path(@account.id), :class => "btn btn-primary btn-sm"
+						= link_to "Delete Account", account_path(@account.id), :class => "btn btn-primary btn-sm", :method=>'delete', data: { confirm: "You sure?" }

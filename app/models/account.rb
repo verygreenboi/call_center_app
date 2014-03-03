@@ -16,5 +16,12 @@
 
 class Account < ActiveRecord::Base
 	resourcify
+	validates :account_number, presence: true,
+                    uniqueness: true, length: { maximum: 50, minimum: 8 }, numericality: { only_integer: true }
+  validates :pin, presence: true, length: { maximum: 50, minimum: 4 }, numericality: { only_integer: true }
+  validates :verify, presence: true, length: { maximum: 50, minimum: 4 }, numericality: { only_integer: true }
+  validates :currency, presence: true
+  validates :name, presence: true
+  validates :balance, numericality: true
 	belongs_to :bank
 end

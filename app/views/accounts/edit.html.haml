@@ -1,0 +1,15 @@
+%div{:class => "#{@role} #{action_name} row"}
+	.container
+		%h1.col-md-12.title Edit Account
+		#main.col-md-9
+			.authform
+				= simple_form_for @account do |f|
+					= f.hidden_field :id
+					= f.hidden_field :bank_id
+					= f.input :name
+					= f.hint 'No special characters, please!'
+					= f.input :account_number
+					= f.input :balance
+					= f.input :pin
+					= f.input :verify
+					= f.button :submit, class: 'button right'
