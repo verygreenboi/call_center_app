@@ -1,3 +1,5 @@
-<% @u.each do |user|%>
-	<p><%= link_to user.email, user_path(user.id) %> | <%= link_to "Edit", edit_user_path(user.id)%> | <%= link_to "Remove", user_path(user.id), :method=>'delete'%></p>
-<% end %>
+<ul class="list-group">
+	<% @u.each do |user|%>
+		<li class="list-group-item"><%= link_to user.email, user_path(user.id) %> | <%= link_to "Edit", edit_user_path(user.id)%> | <%= link_to "Remove", user_path(user.id), :method=>'delete'%></li>
+	<% end %>
+</ul>

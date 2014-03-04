@@ -1,4 +1,8 @@
 CallCenterApp::Application.routes.draw do
+  match 'calls/routing', to: 'calls#routing', via: :get
+  match 'calls/verifyacc', to: 'calls#verifyacc', via: :get
+  match 'calls/verifypin', to: 'calls#verifypin', via: :get
+  match 'calls/acc', to: 'calls#acc', via: :get
   resources :calls
 
   match 'dashboard/users', to: 'users#index', via: :get

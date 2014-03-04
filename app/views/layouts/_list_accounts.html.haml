@@ -1,11 +1,12 @@
-- @a.each do |account|
-	%p 
-		= link_to account.name, account_path(account.id) 
-		|
-		= account.account_number
-		|
-		= link_to account.bank.name, bank_path(account.bank.id)
-		|
-		= link_to "Edit", edit_account_path(account.id) 
-		|
-		= link_to "Remove", account_path(account.id), :method=>'delete', data: { confirm: "You sure?" }
+%ul.list-group
+	- @a.each do |account|
+		%li.list-group-item 
+			= link_to account.name, account_path(account.id) 
+			|
+			= account.account_number
+			|
+			= link_to account.bank.name, bank_path(account.bank.id)
+			|
+			= link_to "Edit", edit_account_path(account.id) 
+			|
+			= link_to "Remove", account_path(account.id), :method=>'delete', data: { confirm: "You sure?" }
