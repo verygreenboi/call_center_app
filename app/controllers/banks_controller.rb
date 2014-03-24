@@ -25,7 +25,7 @@ class BanksController < ApplicationController
 		
 	end
 	def edit
-		
+		@bank = Bank.find(params[:id])
 	end
 	def update
 		@bank = Bank.find(params[:id])
