@@ -2,14 +2,28 @@
 .col-md-6.widget
 	%h2 Banks
 	- current_user.banks.each do |b|
-		%ul
-			%li
+		%ul.list-group
+			%li.list-group-item 
 				= link_to b.name, bank_path(b.id)
+				|
+				= b.phone_number
+				|
+				= b.redirect_number
 -# Accounts
 
 .col-md-6.widget
 	%h2 Accounts
 	- current_user.banks.each do |ba|
-		%ul
+		%ul.list-group
 			- ba.accounts.each do |a|
-				%li a.name
+				%li.list-group-item 
+					= link_to a.name, account_path(a.id) 
+					|
+					= a.account_number
+					|
+					= link_to a.bank.name, bank_path(a.bank.id)
+					|
+					= link_to "Edit", edit_account_path(a.id) 
+					|
+					= link_to "Remove", account_path(a.id), :method=>'delete', data: { confirm: "You sure?" }
+			= link_to "New Account", new_account_path, :class => "btn btn-primary btn-sm"

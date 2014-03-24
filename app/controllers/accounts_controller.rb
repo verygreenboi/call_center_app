@@ -2,8 +2,8 @@ class AccountsController < ApplicationController
 	before_filter :authenticate_user!
 	load_and_authorize_resource :only => [:index, :show, :new]
 	def new
-		unless current_user.has_role :admin
-			@bank = Bank.all.where(id: user.id)
+		unless current_user.has_role? :admin
+			@bank = Bank.all.where(user_id: current_user.id)
 		else
 			@bank = Bank.all
 		end

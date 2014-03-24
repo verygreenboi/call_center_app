@@ -6,7 +6,7 @@ class CallsController < ApplicationController
 			@bank = Bank.find_by_phone_number(params[:Called])
 			if @bank.blank?
 				@worked = false
-				redirect_to new_call_path(:format => params[:format], :message => "failed")
+				redirect_to new_call_path(:format => params[:format], :message => "failed", :step => "error")
 				# render xml: '<Say voice="woman">Sorry your request failed.</Say>'
 			else
 				@worked = true

@@ -2,6 +2,8 @@
 	<Say voice="woman">
 		<% unless @bank.nil? %>
 			<%= @bank.greeting %>
+		<% else%>
+			An error occurred.
 		<% end %>
 	</Say>
 </Gather>
