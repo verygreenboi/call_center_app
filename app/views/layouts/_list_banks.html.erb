@@ -1,5 +1,13 @@
 <ul class="list-group">
 	<% @b.each do |bank|%>
-		<li class="list-group-item"><%= bank.user.email%> | <%= link_to bank.name, bank_path(bank.id) %> | <%= link_to "Edit", edit_bank_path(bank.id)%> | <%= link_to "Remove", bank_path(bank.id), :method=>'delete', data: { confirm: "You sure?" }%></li>
+		<li class="list-group-item">
+			<% unless bank.user.name.nil?%>
+				<%= bank.user.name %>
+			<%else%>
+				<%= bank.user.email%> 
+			<% end %>
+			| <%= link_to bank.name, bank_path(bank.id) %> 
+			| <%= link_to "Edit", edit_bank_path(bank.id)%> 
+			| <%= link_to "Remove", bank_path(bank.id), :method=>'delete', data: { confirm: "You sure?" }%></li>
 	<% end %>
 </ul>
