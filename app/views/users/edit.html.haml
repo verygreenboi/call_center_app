@@ -1,0 +1,20 @@
+.authform
+	= simple_form_for @user do |f|
+		%h3 Edit User
+		- if @user.errors.any?
+			.error_messages
+				#error_explanation
+					.alert.alert-error
+						- message = "The form contains "
+						- message << pluralize(@user.errors.count, "error")
+						- message << "."
+						= message 
+						%ul
+							- @user.errors.full_messages.each do |msg|
+								%li 
+									= msg
+		= f.input :name
+		= f.input :password
+		= f.input :password_confirmation
+		= f.input :email
+		= f.button :submit, class: 'button right'
